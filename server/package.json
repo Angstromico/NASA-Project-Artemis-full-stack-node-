@@ -1,7 +1,7 @@
 {
-  "name": "node-ts-schema",
+  "name": "nasa-server-project",
   "version": "1.0.0",
-  "description": "Modern Node.js + TypeScript starter template with best practices",
+  "description": "Server for NASA project from the course 'Learn from real NodeJS experts! Includes REALLY Advanced NodeJS. Express, GraphQL, REST, MongoDB, SQL, MERN + much more'",
   "main": "dist/index.js",
   "type": "module",
   "engines": {
