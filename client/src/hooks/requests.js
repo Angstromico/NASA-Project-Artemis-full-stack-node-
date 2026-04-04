@@ -1,6 +1,9 @@
 async function httpGetPlanets() {
-  // TODO: Once API is ready.
-  // Load planets and return as JSON.
+  const response = await fetch(
+    `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_PLANETS_ENDPOINT}`
+  )
+  const planets = await response.json()
+  return planets
 }
 
 async function httpGetLaunches() {
@@ -18,9 +21,4 @@ async function httpAbortLaunch(id) {
   // Delete launch with given ID.
 }
 
-export {
-  httpGetPlanets,
-  httpGetLaunches,
-  httpSubmitLaunch,
-  httpAbortLaunch,
-};
+export { httpGetPlanets, httpGetLaunches, httpSubmitLaunch, httpAbortLaunch }
