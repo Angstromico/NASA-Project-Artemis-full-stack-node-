@@ -12,7 +12,7 @@ const planets = [
   },
 ]
 
-function getAllPlanets(_: Request, res: Response) {
+function getAllPlanets(_: Request, res: Response): Response {
   return res.status(OK).json(planets)
 }
 
