@@ -1,14 +1,8 @@
 import http, { type RequestListener } from 'http'
-import express from 'express'
 import dotenv from 'dotenv'
+import app from './app.js'
 
 dotenv.config()
-
-const app = express()
-
-app.get('/', (_, res) => {
-  res.send('Hello World!')
-})
 
 const PORT = process.env.PORT || 5080
 
