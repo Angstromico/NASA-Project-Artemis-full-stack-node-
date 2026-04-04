@@ -33,7 +33,7 @@
     "modern",
     "best-practices"
   ],
-  "author": "",
+  "author": "Manuel Morales",
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.17.0",
