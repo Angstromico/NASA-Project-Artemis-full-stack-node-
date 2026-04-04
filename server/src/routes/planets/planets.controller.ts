@@ -13,7 +13,7 @@ const planets = [
 ]
 
 function getAllPlanets(_: Request, res: Response) {
-  res.status(OK).json(planets)
+  return res.status(OK).json(planets)
 }
 
 export default getAllPlanets
