@@ -6,4 +6,4 @@ function getAllPlanets(_: Request, res: Response): Response {
   return res.status(OK).json(planets)
 }
 
-export default getAllPlanets
+export { getAllPlanets }
