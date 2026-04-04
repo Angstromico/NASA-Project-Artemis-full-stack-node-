@@ -1,9 +1,10 @@
 import { Router } from 'express'
+import getAllPlanets from './planets.controller.js'
 
 const planetsRouter = Router()
 
 planetsRouter.get('/', (_, res) => {
-  res.send('All planets')
+  getAllPlanets(_, res)
 })
 
 export default planetsRouter
