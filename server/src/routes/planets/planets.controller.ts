@@ -1,4 +1,5 @@
 import type { Request, Response } from 'express'
+import { OK } from '../../utils/http-codes.js'
 
 const planets = [
   {
@@ -12,7 +13,7 @@ const planets = [
 ]
 
 function getAllPlanets(_: Request, res: Response) {
-  res.status(200).json(planets)
+  res.status(OK).json(planets)
 }
 
 export default getAllPlanets
