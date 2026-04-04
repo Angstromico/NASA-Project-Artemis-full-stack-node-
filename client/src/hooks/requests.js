@@ -3,7 +3,6 @@ async function httpGetPlanets() {
     `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_PLANETS_ENDPOINT}`,
   )
   const planets = await response.json()
-  console.log(planets)
   return planets
 }
 
