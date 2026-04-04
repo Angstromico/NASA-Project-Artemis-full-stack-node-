@@ -1,16 +1,6 @@
 import type { Request, Response } from 'express'
 import { OK } from '../../utils/http-codes.js'
-
-const planets = [
-  {
-    name: 'Earth',
-    color: 'blue',
-  },
-  {
-    name: 'Mars',
-    color: 'red',
-  },
-]
+import planets from '../../models/planets.model.js'
 
 function getAllPlanets(_: Request, res: Response): Response {
   return res.status(OK).json(planets)
