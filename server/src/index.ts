@@ -1,3 +1,4 @@
+import http, { type RequestListener } from 'http'
 import express from 'express'
 import dotenv from 'dotenv'
 
@@ -11,6 +12,8 @@ app.get('/', (_, res) => {
 
 const PORT = process.env.PORT || 5080
 
-app.listen(PORT, () => {
+const server = http.createServer(app as unknown as RequestListener)
+
+server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 })
