@@ -25,8 +25,22 @@ This is a full-stack application that allows users to:
 - **Vitest** for testing
 
 ### Frontend
-- React (coming soon)
+- **React** for the user interface
+- **Arwes** for sci-fi themed UI components
 - Modern JavaScript/TypeScript practices
+
+## Project Structure
+
+```
+artemis/
+├── package.json       # Root workspace configuration
+├── client/            # React frontend
+│   ├── package.json
+│   └── src/
+└── server/            # Node.js/Express backend
+    ├── package.json
+    └── src/
+```
 
 ## Getting Started
 
@@ -39,33 +53,42 @@ This is a full-stack application that allows users to:
 ### Installation
 
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd artemis
-
-# Install server dependencies
-cd server
+# Install all dependencies (root level)
 npm install
+```
 
-# Install client dependencies (when available)
-cd ../client
-npm install
+Or install individually:
+
+```bash
+npm run install-server  # Install server dependencies
+npm run install-client  # Install client dependencies
 ```
 
 ### Running the Application
 
+**Development mode (both client and server):**
 ```bash
-# Development mode (server)
-cd server
-npm run dev
-
-# Build for production
-cd server
-npm run build
-npm start
+npm run watch
 ```
 
-### Available Scripts
+**Individual servers:**
+```bash
+npm run server  # Start backend on port 5082
+npm run client  # Start frontend on port 3000
+```
+
+### Root-Level Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run install` | Install all workspace dependencies |
+| `npm run install-server` | Install server dependencies |
+| `npm run install-client` | Install client dependencies |
+| `npm run server` | Start backend development server |
+| `npm run client` | Start frontend development server |
+| `npm run watch` | Run both client and server concurrently |
+
+### Server Scripts
 
 | Command | Description |
 |---------|-------------|
@@ -90,4 +113,8 @@ This project is based on the "Nasa Project" section from the **Complete NodeJS D
 
 ## License
 
-MIT
+GPL-3.0
+
+---
+
+Author: Manuel Morales
