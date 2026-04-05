@@ -9,7 +9,9 @@
     "install": "npm run install-server && npm run install-client",
     "server": "npm run dev --prefix server",
     "client": "npm start --prefix client",
-    "watch": "npm run server & npm run client"
+    "watch": "npm run server & npm run client",
+    "build": "npm run build-client",
+    "build-client": "npm run build --prefix client"
   },
   "repository": {
     "type": "git",
