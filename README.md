@@ -64,6 +64,21 @@ npm run install-server  # Install server dependencies
 npm run install-client  # Install client dependencies
 ```
 
+### Managing Packages with npm Workspaces
+
+This project uses npm Workspaces. Use the `-w` flag to install packages to specific workspaces:
+
+```bash
+# Install a package in the server
+npm install cors -w server
+
+# Install a package in the client
+npm install react-router -w client
+
+# Install a package in both workspaces
+npm install lodash -w client -w server
+```
+
 ### Running the Application
 
 **Development mode (both client and server):**
