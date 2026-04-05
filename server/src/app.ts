@@ -1,5 +1,8 @@
 import express from 'express'
 import cors from 'cors'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const whitelist = [process.env.CORS_ORIGIN || 'http://localhost:5173']
 
