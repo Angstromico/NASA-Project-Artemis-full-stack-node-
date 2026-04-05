@@ -1,0 +1,31 @@
+{
+  "name": "artemis",
+  "version": "1.0.0",
+  "description": "A full-stack application inspired by NASA's Artemis II mission, the next step in humanity's return to the Moon. This project serves as an educational implementation based on the \"Nasa Project\" from the [Complete NodeJS Developer Course (GraphQL, MongoDB, + more)](https://www.udemy.com/course/complete-nodejs-developer-zero-to-mastery/).",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run dev --prefix server",
+    "client": "npm start --prefix client",
+    "watch": "npm run server & npm run client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angstromico/NASA-Project-Artemis-full-stack-node-.git"
+  },
+  "keywords": [
+    "NASA",
+    "Artemis",
+    "full-stack",
+    "Node.js",
+    "React"
+  ],
+  "author": "Manuel Morales",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Angstromico/NASA-Project-Artemis-full-stack-node-/issues"
+  },
+  "homepage": "https://github.com/Angstromico/NASA-Project-Artemis-full-stack-node-#readme"
+}
