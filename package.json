@@ -22,6 +22,10 @@
     "Node.js",
     "React"
   ],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "author": "Manuel Morales",
   "license": "GPL-3.0",
   "bugs": {
