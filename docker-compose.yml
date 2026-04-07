@@ -6,6 +6,7 @@ services:
       args:
         REACT_APP_API_URL: http://localhost:5080
         REACT_APP_PLANETS_ENDPOINT: /planets
+    image: memz28/nasaplanetsnote:latest
     ports:
       - '5080:5080'
     environment:
