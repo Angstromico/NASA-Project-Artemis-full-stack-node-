@@ -34,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/Angstromico/NASA-Project-Artemis-full-stack-node-/issues"
   },
-  "homepage": "https://github.com/Angstromico/NASA-Project-Artemis-full-stack-node-#readme"
+  "homepage": "https://github.com/Angstromico/NASA-Project-Artemis-full-stack-node-#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
