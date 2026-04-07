@@ -20,7 +20,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 # Copy necessary files from builder (destinations are relative to WORKDIR /app)
-COPY --from=builder /app/server/public ./public
+COPY --from=builder /app/server/public ./server/dist/public
 COPY --from=builder /app/server/dist ./server/dist
 COPY --from=builder /app/server/src/data ./server/dist/src/data
 COPY --from=builder /app/server ./server
