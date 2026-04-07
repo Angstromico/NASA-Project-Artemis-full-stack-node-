@@ -3,8 +3,8 @@ import { getAllPlanets } from './planets.controller.js'
 
 const planetsRouter = Router()
 
-planetsRouter.get('/', (_, res) => {
-  getAllPlanets(_, res)
+planetsRouter.get('/', async (_, res) => {
+  await getAllPlanets(_, res)
 })
 
 export default planetsRouter
