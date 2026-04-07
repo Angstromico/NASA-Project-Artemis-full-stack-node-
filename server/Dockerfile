@@ -9,7 +9,13 @@ RUN npm ci
 
 # Copy source code and build
 COPY . .
+## Build the client (frontend) inside the same image and expose assets
+WORKDIR /app/client
+RUN npm ci --silent
 RUN npm run build
+WORKDIR /app
+RUN mkdir -p public
+RUN cp -r client/build/. public/
 
 # Stage 2: Run the application
 FROM node:22-alpine AS runner
@@ -20,6 +26,7 @@ ENV NODE_ENV=production
 
 # Copy necessary files from builder
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/package-lock.json ./package-lock.json
 
