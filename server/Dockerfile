@@ -19,9 +19,10 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-# Copy necessary files from builder
+# Copy necessary files from builder (destinations are relative to WORKDIR /app)
 COPY --from=builder /app/server/public ./public
-COPY --from=builder /app/server/dist ./dist
+COPY --from=builder /app/server/dist ./server/dist
+COPY --from=builder /app/server/src/data ./server/dist/src/data
 COPY --from=builder /app/server ./server
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/package-lock.json ./package-lock.json
