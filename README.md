@@ -126,6 +126,104 @@ This project is based on the "Nasa Project" section from the **Complete NodeJS D
 - Deployment strategies
 - Real-world full-stack development patterns
 
+## Docker
+
+This project includes Docker support for running both the frontend and backend in containers.
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Quick Start
+
+```bash
+# Build the image
+docker compose build
+
+# Start the container
+docker compose up -d
+```
+
+The app will be available at **http://localhost:5080**.
+
+### What the Docker setup does
+
+- **Builds the frontend** (React) and serves it as static assets from the Express server.
+- **Builds the backend** (TypeScript → compiled JavaScript) with all production dependencies.
+- **Exposes port 5080** where both the frontend and the API are served.
+- **Serves static files** from `server/dist/public` via Express.
+- **Copies CSV data files** (Kepler exoplanet data) into the image so the planets API works.
+
+### Environment Variables
+
+The following build arguments are available for the Docker build:
+
+| Argument | Default | Description |
+|----------|---------|-------------|
+| `REACT_APP_API_URL` | `http://localhost:5080` | API base URL baked into the frontend at build time |
+| `REACT_APP_PLANETS_ENDPOINT` | `/api/planets` | Planets API endpoint baked into the frontend |
+
+These can be overridden in `docker-compose.yml` or passed directly:
+
+```bash
+docker compose build --build-arg REACT_APP_API_URL=http://localhost:5080
+```
+
+### Common Commands
+
+```bash
+# Start the container
+docker compose up -d
+
+# Stop the container
+docker compose down
+
+# Rebuild after code changes
+docker compose build && docker compose up -d
+
+# View logs
+docker compose logs -f api
+
+# Start in the foreground (to see logs live)
+docker compose up
+```
+
+### Project Structure in Docker
+
+```
+Container filesystem (at /app):
+  /app/
+    server/           # Server source and config
+      dist/          # Compiled server JavaScript
+        public/      # Frontend static assets
+        src/data/    # Kepler CSV data files
+      src/           # Server TypeScript source
+    package.json     # Root workspace manifest
+```
+
+### Troubleshooting
+
+**`ERR_CONNECTION_REFUSED` in the browser**
+
+Make sure you are accessing the app at `http://localhost:5080`. The frontend was built with `REACT_APP_API_URL=http://localhost:5080` baked in, so it expects the API at that same origin.
+
+**`ENOENT: no such file or directory, open '.../kepler_data.csv'`**
+
+The CSV data files are copied into the image at build time. If you see this error, rebuild the image to ensure the data files are present:
+
+```bash
+docker compose build --no-cache && docker compose up -d
+```
+
+**Changes to source code not reflected**
+
+Rebuild the image — Docker layers cache each `RUN` command. Frontend and server changes require a fresh build:
+
+```bash
+docker compose build && docker compose up -d
+```
+
 ## License
 
 GPL-3.0
