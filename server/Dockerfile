@@ -3,13 +3,18 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
+ARG REACT_APP_API_URL=http://localhost:5080
+ARG REACT_APP_PLANETS_ENDPOINT=/planets
+ENV REACT_APP_API_URL=$REACT_APP_API_URL
+ENV REACT_APP_PLANETS_ENDPOINT=$REACT_APP_PLANETS_ENDPOINT
+
 # Copy source code first (needed for workspaces)
 COPY . .
 
 # Install dependencies (prefer lockfile if present)
 RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
-# Build the application
+# Build the application (env vars are embedded by webpack at build time)
 RUN npm run build-client && npm run build --prefix server
 
 # Stage 2: Run the application

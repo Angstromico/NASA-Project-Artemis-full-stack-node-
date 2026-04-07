@@ -3,7 +3,11 @@ services:
     build:
       context: .
       dockerfile: server/Dockerfile
+      args:
+        REACT_APP_API_URL: http://localhost:5080
+        REACT_APP_PLANETS_ENDPOINT: /planets
     ports:
-      - "5080:5080"
+      - '5080:5080'
     environment:
       - PORT=5080
+      - CORS_ORIGIN=http://localhost:5080
