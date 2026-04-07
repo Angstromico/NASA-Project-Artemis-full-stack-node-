@@ -1,5 +1,7 @@
 # Artemis
 
+[![Docker](https://img.shields.io/badge/Docker Hub-Artemis-2496ed?logo=docker&style=flat-square)](https://hub.docker.com/repository/docker/memz28/nasaplanetsnote/general)
+
 A full-stack application inspired by NASA's Artemis II mission, the next step in humanity's return to the Moon. This project serves as an educational implementation based on the "Nasa Project" from the [Complete NodeJS Developer Course (GraphQL, MongoDB, + more)](https://www.udemy.com/course/complete-nodejs-developer-zero-to-mastery/).
 
 ## About Artemis II
@@ -130,12 +132,25 @@ This project is based on the "Nasa Project" section from the **Complete NodeJS D
 
 This project includes Docker support for running both the frontend and backend in containers.
 
-### Prerequisites
+### Docker Hub
+
+A pre-built image is available on Docker Hub. Pull and run it with:
+
+```bash
+docker pull memz28/nasaplanetsnote
+docker run -d -p 5080:5080 --name artemis memz28/nasaplanetsnote
+```
+
+Then open **http://localhost:5080** in your browser.
+
+### Build from Source
+
+#### Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-### Quick Start
+#### Quick Start
 
 ```bash
 # Build the image
@@ -147,7 +162,7 @@ docker compose up -d
 
 The app will be available at **http://localhost:5080**.
 
-### What the Docker setup does
+#### What the Docker setup does
 
 - **Builds the frontend** (React) and serves it as static assets from the Express server.
 - **Builds the backend** (TypeScript → compiled JavaScript) with all production dependencies.
@@ -155,7 +170,7 @@ The app will be available at **http://localhost:5080**.
 - **Serves static files** from `server/dist/public` via Express.
 - **Copies CSV data files** (Kepler exoplanet data) into the image so the planets API works.
 
-### Environment Variables
+#### Environment Variables
 
 The following build arguments are available for the Docker build:
 
@@ -170,7 +185,7 @@ These can be overridden in `docker-compose.yml` or passed directly:
 docker compose build --build-arg REACT_APP_API_URL=http://localhost:5080
 ```
 
-### Common Commands
+#### Common Commands
 
 ```bash
 # Start the container
@@ -189,7 +204,7 @@ docker compose logs -f api
 docker compose up
 ```
 
-### Project Structure in Docker
+#### Project Structure in Docker
 
 ```
 Container filesystem (at /app):
@@ -202,7 +217,7 @@ Container filesystem (at /app):
     package.json     # Root workspace manifest
 ```
 
-### Troubleshooting
+#### Troubleshooting
 
 **`ERR_CONNECTION_REFUSED` in the browser**
 
