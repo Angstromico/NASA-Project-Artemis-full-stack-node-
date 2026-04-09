@@ -4,9 +4,10 @@
   "description": "A full-stack application inspired by NASA's Artemis II mission, the next step in humanity's return to the Moon. This project serves as an educational implementation based on the \"Nasa Project\" from the [Complete NodeJS Developer Course (GraphQL, MongoDB, + more)](https://www.udemy.com/course/complete-nodejs-developer-zero-to-mastery/).",
   "main": "index.js",
   "scripts": {
+    "setup-env": "cp server/.env.example server/.env && cp client/.env.example client/.env",
     "install-server": "npm install --prefix server",
     "install-client": "npm install --prefix client",
-    "install": "npm run install-server && npm run install-client",
+    "install": "npm run setup-env && npm run install-server && npm run install-client",
     "server": "npm run dev --prefix server",
     "client": "npm start --prefix client",
     "watch": "concurrently \"npm run server\" \"npm run client\"",
