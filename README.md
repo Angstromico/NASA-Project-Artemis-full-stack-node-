@@ -98,7 +98,8 @@ npm run client  # Start frontend on port 3000
 
 | Command | Description |
 |---------|-------------|
-| `npm run install` | Install all workspace dependencies |
+| `npm run setup-env` | Copy `.env.example` files to `.env` for server and client |
+| `npm run install` | Setup env files and install all workspace dependencies |
 | `npm run install-server` | Install server dependencies |
 | `npm run install-client` | Install client dependencies |
 | `npm run server` | Start backend development server |
