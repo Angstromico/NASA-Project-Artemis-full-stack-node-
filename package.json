@@ -9,7 +9,7 @@
     "install": "npm run install-server && npm run install-client",
     "server": "npm run dev --prefix server",
     "client": "npm start --prefix client",
-    "watch": "concurrently \"npm run server\" \"set REACT_APP_API_URL=http://localhost:5082&& npm run client\"",
+    "watch": "concurrently \"npm run server\" \"npm run client\"",
     "build": "npm run build-client",
     "build-client": "npm run build --prefix client",
     "deploy": "npm run build && npm run dev --prefix server"
