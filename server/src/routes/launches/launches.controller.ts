@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express'
-import { launches } from '@/models/launches.model.js'
+import { launches, type Launch } from '@/models/launches.model.js'
 import { OK } from '@/utils/http-codes.js'
 
 function getAllLaunches(_: Request, res: Response): void {
@@ -8,4 +8,12 @@ function getAllLaunches(_: Request, res: Response): void {
   res.status(OK).json(launchesArray)
 }
 
-export { getAllLaunches }
+function addNewLaunch(req: Request, res: Response): void {
+  const launch: Launch = req.body
+
+  launches.set(launch.flightNumber, launch)
+
+  res.status(OK).json(launch)
+}
+
+export { getAllLaunches, addNewLaunch }
