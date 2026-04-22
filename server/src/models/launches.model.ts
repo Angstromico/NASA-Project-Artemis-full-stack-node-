@@ -11,12 +11,18 @@ export interface Launch {
 
 const launches = new Map<number, Launch>()
 
+let latestFlightNumber = 100
+
+export function getNextFlightNumber(): number {
+  return latestFlightNumber++
+}
+
 const launch = {
   mission: 'Kepler exploration X',
   rocket: 'Explorer IS1',
   destination: 'Kepler-442b',
   launchDate: new Date('December 27, 2035'),
-  flightNumber: 100,
+  flightNumber: latestFlightNumber,
   customers: ['NASA', 'ZTM'],
   upcoming: true,
   success: true,
