@@ -22,7 +22,7 @@ const launch = {
   rocket: 'Explorer IS1',
   destination: 'Kepler-442b',
   launchDate: new Date('December 27, 2035'),
-  flightNumber: latestFlightNumber,
+  flightNumber: getNextFlightNumber(),
   customers: ['NASA', 'ZTM'],
   upcoming: true,
   success: true,
