@@ -34,3 +34,5 @@ pnpm-debug.log*
 
 # OS
 Thumbs.db
+
+src/models/launches-data.json
