@@ -1,0 +1,29 @@
+[
+  {
+    "mission": "Kepler exploration X",
+    "rocket": "Explorer IS1",
+    "destination": "Kepler-442b",
+    "launchDate": "2035-12-27T04:00:00.000Z",
+    "flightNumber": 100,
+    "customers": [
+      "NASA",
+      "ZTM"
+    ],
+    "upcoming": true,
+    "success": true
+  },
+  {
+    "mission": "Falcon Heavy Test Flight 2",
+    "rocket": "Falcon Heavy 2",
+    "destination": "Mars Orbit 2",
+    "launchDate": "2026-10-15T14:30:00.000Z",
+    "customers": [
+      "NASA",
+      "SpaceX",
+      "ESA"
+    ],
+    "success": true,
+    "flightNumber": 101,
+    "upcoming": true
+  }
+]
