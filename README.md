@@ -2,6 +2,33 @@
 
 [![Docker](https://img.shields.io/badge/Docker Hub-Artemis-2496ed?logo=docker&style=flat-square)](https://hub.docker.com/repository/docker/memz28/nasaplanetsnote/general)
 
+```text
+                         _..._
+                      .:::::::.        ARTEMIS II
+                    .:::::::::::.      RETURN TO THE MOON
+                   :::::::::::::::
+                   ':::::::::::::'
+                     ':::::::::'
+
+                              /\
+                             /  \
+                            /++++\
+                           /  ()  \
+                           |      |
+                           | NASA |
+                           |      |
+                          /|______|\
+                         /_        _\
+                           |  /\  |
+                           | /  \ |
+                           |/____\|
+                             /||\
+                            /_||_\
+                             ****
+                            ******
+                           ********
+```
+
 A full-stack application inspired by NASA's Artemis II mission, the next step in humanity's return to the Moon. This project serves as an educational implementation based on the "Nasa Project" from the [Complete NodeJS Developer Course (GraphQL, MongoDB, + more)](https://www.udemy.com/course/complete-nodejs-developer-zero-to-mastery/).
 
 ## About Artemis II
