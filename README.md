@@ -1,7 +1,5 @@
 # Artemis
 
-[![Docker](https://img.shields.io/badge/Docker Hub-Artemis-2496ed?logo=docker&style=flat-square)](https://hub.docker.com/repository/docker/memz28/nasaplanetsnote/general)
-
 ```text
                          _..._
                       .:::::::.        ARTEMIS II
@@ -47,6 +45,7 @@ This is a full-stack application that allows users to:
 ## Tech Stack
 
 ### Backend
+
 - **Node.js** with TypeScript
 - **Express** for API development
 - **MongoDB** for data persistence
@@ -54,6 +53,7 @@ This is a full-stack application that allows users to:
 - **Vitest** for testing
 
 ### Frontend
+
 - **React** for the user interface
 - **Arwes** for sci-fi themed UI components
 - Modern JavaScript/TypeScript practices
@@ -111,11 +111,13 @@ npm install lodash -w client -w server
 ### Running the Application
 
 **Development mode (both client and server):**
+
 ```bash
 npm run watch
 ```
 
 **Individual servers:**
+
 ```bash
 npm run server  # Start backend on port 5082
 npm run client  # Start frontend on port 3000
@@ -123,28 +125,28 @@ npm run client  # Start frontend on port 3000
 
 ### Root-Level Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run setup-env` | Copy `.env.example` files to `.env` for server and client |
-| `npm run install` | Setup env files and install all workspace dependencies |
-| `npm run install-server` | Install server dependencies |
-| `npm run install-client` | Install client dependencies |
-| `npm run server` | Start backend development server |
-| `npm run client` | Start frontend development server |
-| `npm run watch` | Run both client and server concurrently |
+| Command                  | Description                                               |
+| ------------------------ | --------------------------------------------------------- |
+| `npm run setup-env`      | Copy `.env.example` files to `.env` for server and client |
+| `npm run install`        | Setup env files and install all workspace dependencies    |
+| `npm run install-server` | Install server dependencies                               |
+| `npm run install-client` | Install client dependencies                               |
+| `npm run server`         | Start backend development server                          |
+| `npm run client`         | Start frontend development server                         |
+| `npm run watch`          | Run both client and server concurrently                   |
 
 ### Server Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server with hot reload |
-| `npm run build` | Compile TypeScript to JavaScript |
-| `npm run start` | Start production server |
-| `npm run type-check` | Run TypeScript type checking |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format code with Prettier |
-| `npm run test` | Run tests with Vitest |
-| `npm run validate` | Run all quality checks |
+| Command              | Description                              |
+| -------------------- | ---------------------------------------- |
+| `npm run dev`        | Start development server with hot reload |
+| `npm run build`      | Compile TypeScript to JavaScript         |
+| `npm run start`      | Start production server                  |
+| `npm run type-check` | Run TypeScript type checking             |
+| `npm run lint`       | Run ESLint                               |
+| `npm run format`     | Format code with Prettier                |
+| `npm run test`       | Run tests with Vitest                    |
+| `npm run validate`   | Run all quality checks                   |
 
 ## Course Reference
 
@@ -202,10 +204,10 @@ The app will be available at **http://localhost:5080**.
 
 The following build arguments are available for the Docker build:
 
-| Argument | Default | Description |
-|----------|---------|-------------|
-| `REACT_APP_API_URL` | `http://localhost:5080` | API base URL baked into the frontend at build time |
-| `REACT_APP_PLANETS_ENDPOINT` | `/api/planets` | Planets API endpoint baked into the frontend |
+| Argument                     | Default                 | Description                                        |
+| ---------------------------- | ----------------------- | -------------------------------------------------- |
+| `REACT_APP_API_URL`          | `http://localhost:5080` | API base URL baked into the frontend at build time |
+| `REACT_APP_PLANETS_ENDPOINT` | `/api/planets`          | Planets API endpoint baked into the frontend       |
 
 These can be overridden in `docker-compose.yml` or passed directly:
 
